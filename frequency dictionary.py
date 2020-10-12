@@ -10,9 +10,9 @@ TODO
 import collections
 
 # создаем список из слов текста
-with open('byte-of-python.txt', encoding='utf-8') as f:
+with open('VanderPlas.txt', encoding='utf-8') as f:
     txt = f.read().lower().strip()
-    for symbol in '0123456789.,:;-_+=()!@#$%^&*{}[]|\\/<>?=`"\'':
+    for symbol in '0123456789.,:;-_+=()!@#$%^&*{}[]|\\/<>?=`“”•–?"\'':
         txt = txt.replace(symbol, ' ')
     txt_list = txt.split()
     # print(word_list)
