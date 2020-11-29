@@ -10,9 +10,9 @@ TODO
 import collections
 
 # создаем список из слов текста
-with open('byte-of-python.txt', encoding='utf-8') as f:
+with open('Barnes-Svarney-P._-Svarney-T.E.-The-Handy-Geology-Answer-Book-2004.txt', encoding='utf-8') as f:
     txt = f.read().lower().strip()
-    for symbol in '0123456789.,:;-_+=()!@#$%^&*{}[]|\\/<>?=`"\'':
+    for symbol in '0123456789.,:;-_+=()!@#$%^&*{}[]|\\/<>?=`"\'–∼°’•→©”✔~…':
         txt = txt.replace(symbol, ' ')
     txt_list = txt.split()
     # print(word_list)
@@ -41,7 +41,8 @@ word_list.sort()
 
 # словоформы с добавленными -s -es -ed -ing удаляем, добавляя в статистику основного слова.
 # Как просто решить вопрос с use и using (они далеко друг от друга)? Желательно не зацепив us.
-# Этот алгоритм к сожалению us и uses счиатет одним словом.
+# Этот алгоритм к сожалению us и uses счиатет одним словом. А rotates превращает в rotat почему-то
+
 for i in range(len(word_list) - 10):
     for j in range(i + 10, i, -1):
         if        (word_list[j] == ''.join([word_list[i], 's'])
